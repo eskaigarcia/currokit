@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Board;
+use App\Models\Company;
+use App\Observers\BoardObserver;
+use App\Observers\CompanyObserver;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -24,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureDefaults();
+        Company::observe(CompanyObserver::class);
+        Board::observe(BoardObserver::class);
     }
 
     /**
