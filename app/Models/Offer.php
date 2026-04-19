@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Offer extends Model
 {
     use SoftDeletes;
+
     protected $fillable = [
         'company_id', 'instance_id', 'user_id',
         'position', 'linkedin_link', 'current_state', 'notes',

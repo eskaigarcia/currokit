@@ -27,16 +27,16 @@ class UserFactory extends Factory
         $name = fake()->name();
 
         return [
-            'name'                       => $name,
-            'user_name'                  => fake()->unique()->userName(),
-            'display_name'               => $name,
-            'email'                      => fake()->unique()->safeEmail(),
-            'email_verified_at'          => now(),
-            'password'                   => static::$password ??= Hash::make('password'),
-            'remember_token'             => Str::random(10),
-            'two_factor_secret'          => null,
-            'two_factor_recovery_codes'  => null,
-            'two_factor_confirmed_at'    => null,
+            'name' => $name,
+            'user_name' => fake()->unique()->userName(),
+            'display_name' => $name,
+            'email' => fake()->unique()->safeEmail(),
+            'email_verified_at' => now(),
+            'password' => static::$password ??= Hash::make('password'),
+            'remember_token' => Str::random(10),
+            'two_factor_secret' => null,
+            'two_factor_recovery_codes' => null,
+            'two_factor_confirmed_at' => null,
         ];
     }
 

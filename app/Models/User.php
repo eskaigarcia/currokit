@@ -14,7 +14,7 @@ class User extends Authenticatable
         'name', 'email', 'user_name', 'display_name', 'password',
         'role', 'level', 'vote_weight', 'points', 'premium_status',
         'premium_until', 'trial_ends_at', 'profile_picture', 'preferences',
-        'banned', 'banned_at', 'ban_reason'
+        'banned', 'banned_at', 'ban_reason',
     ];
 
     protected $hidden = [
@@ -135,5 +135,4 @@ class User extends Authenticatable
     {
         return $this->banned === true;
     }
-
 }
