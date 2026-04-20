@@ -6,6 +6,8 @@ the relevant directories are shown.
 currokit
 ├ app/
 │   ├ Enums/                Enum definitions
+│   ├ Http/
+│   │   └ Controllers/      Main business logic
 │   ├ Models/               Entity models  
 │   └ Observers/            Triggers on entity updates
 ├ database/

@@ -1,5 +1,12 @@
+# ── General ───────────────────────────────────────────────────────────────
 install:
 	composer install
+
+serve:
+	php artisan serve
+
+dev:
+	npm run dev
 
 # ── Code Quality ──────────────────────────────────────────────────────────
 check-pr:
