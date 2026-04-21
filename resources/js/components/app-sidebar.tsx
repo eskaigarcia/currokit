@@ -1,17 +1,15 @@
-import { Link } from '@inertiajs/react';
 import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-react';
-import AppLogo from '@/components/app-logo';
+import { PanelLeftCloseIcon, PanelLeftOpenIcon } from 'lucide-react';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
-import { NavUser } from '@/components/nav-user';
 import {
     Sidebar,
     SidebarContent,
     SidebarFooter,
-    SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
+    useSidebar,
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
@@ -37,28 +35,32 @@ const footerNavItems: NavItem[] = [
     },
 ];
 
+function CollapseButton() {
+    const { toggleSidebar, state } = useSidebar();
+    const collapsed = state === 'collapsed';
+
+    return (
+        <SidebarMenuButton onClick={toggleSidebar} tooltip={collapsed ? 'Expandir panel' : 'Colapsar panel'}>
+            {collapsed ? <PanelLeftOpenIcon /> : <PanelLeftCloseIcon />}
+            <span>{collapsed ? 'Expandir panel' : 'Colapsar panel'}</span>
+        </SidebarMenuButton>
+    );
+}
+
 export function AppSidebar() {
     return (
-        <Sidebar collapsible="icon" variant="inset">
-            <SidebarHeader>
-                <SidebarMenu>
-                    <SidebarMenuItem>
-                        <SidebarMenuButton size="lg" asChild>
-                            <Link href={dashboard()} prefetch>
-                                <AppLogo />
-                            </Link>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
-                </SidebarMenu>
-            </SidebarHeader>
-
+        <Sidebar collapsible="icon" variant="inset" className="top-16 h-[calc(100svh-4rem)]">
             <SidebarContent>
                 <NavMain items={mainNavItems} />
             </SidebarContent>
 
             <SidebarFooter>
-                <NavFooter items={footerNavItems} className="mt-auto" />
-                <NavUser />
+                <NavFooter items={footerNavItems} />
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                        <CollapseButton />
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </SidebarFooter>
         </Sidebar>
     );
