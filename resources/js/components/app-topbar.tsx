@@ -27,7 +27,11 @@ export function AppTopBar() {
             {auth.user && (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <button className="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                        <button className="flex cursor-pointer items-center gap-3 rounded py-2 px-4 transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                            <div className="flex flex-col text-right leading-tight">
+                                <span className="text-sm font-medium">{auth.user.name}</span>
+                                <span className="text-xs text-muted-foreground">{auth.user.points} puntos</span>
+                            </div>
                             <Avatar className="h-8 w-8">
                                 <AvatarImage
                                     src={auth.user.avatar}
