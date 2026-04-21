@@ -15,7 +15,7 @@ export function AppTopBar() {
     const getInitials = useInitials();
 
     return (
-        <header className="relative z-20 flex h-16 shrink-0 items-center border-b bg-background px-6">
+        <header className="sticky top-0 z-20 flex h-16 shrink-0 items-center border-b bg-background px-6">
             <Link href={home()} className="mr-8">
                 <AppLogo className="h-7 w-auto" />
             </Link>
