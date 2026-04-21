@@ -16,8 +16,8 @@ export function AppTopBar() {
 
     return (
         <header className="relative z-20 flex h-16 shrink-0 items-center border-b bg-background px-6">
-            <Link href={home()} className="mr-8 flex items-center gap-2">
-                <AppLogo />
+            <Link href={home()} className="mr-8">
+                <AppLogo className="h-7 w-auto" />
             </Link>
 
             <nav className="flex flex-1 items-center gap-1">

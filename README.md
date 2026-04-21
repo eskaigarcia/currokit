@@ -30,7 +30,7 @@ currokit/resources/js
 ## Objectives
 
 ## Issues
-- [ ]   0: No issues detected
+- [ ]   1: [DESIGN] Logo could use a bit of thinning out
 
 ---
 
