@@ -17,7 +17,7 @@ currokit
 ├ database/
 │   └ migrations/           Database migrations for models
 ├ resources/
-│   └ js/                   * React app directory
+│   └ js/                   -> React app directory <-
 ├ tests/                    Testing suite
 └ makefile                  Command line shortcuts
 
@@ -30,11 +30,16 @@ currokit/resources/js
 ## Objectives
 
 ## Issues
-- [ ]   0: No issues detected
+- [ ]   1: [DESIGN] Logo could use a bit of thinning out
 
 ---
 
 ## History
+### 0.2.0-alpha426: Implemented main layout
+- Imported menus into sidebar and top bar
+- Updated usage of colors
+- Translated default setting pages
+- Modified UI to match expectation
 ### 0.1.0-alpha421: Established baseline
 - Database schemas and migrations have been imported
 - Baseline for UI styles has been imported
