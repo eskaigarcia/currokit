@@ -8,7 +8,7 @@ export default function AppSidebarLayout({ children }: AppLayoutProps) {
     return (
         <div className="flex h-svh flex-col">
             <AppTopBar />
-            <AppShell variant="sidebar" className="min-h-0 flex-1">
+            <AppShell variant="sidebar" className="min-h-0 flex-1 bg-muted">
                 <AppSidebar />
                 <AppContent variant="sidebar" className="overflow-x-hidden">
                     {children}
