@@ -8,10 +8,18 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { UserMenuContent } from '@/components/user-menu-content';
 import { useInitials } from '@/hooks/use-initials';
+import { cn } from '@/lib/utils';
 import { home } from '@/routes';
+
+const navItems = [
+    { label: 'Mis tableros', href: '/tableros' },
+    { label: 'Empresas', href: '/empresas' },
+    { label: 'Educación', href: '/educacion' },
+];
 
 export function AppTopBar() {
     const { auth } = usePage().props;
+    const currentUrl = usePage().url;
     const getInitials = useInitials();
 
     return (
@@ -21,7 +29,20 @@ export function AppTopBar() {
             </Link>
 
             <nav className="flex flex-1 items-center gap-1">
-                {/* Main navigation items */}
+                {navItems.map(({ label, href }) => (
+                    <Link
+                        key={href}
+                        href={href}
+                        className={cn(
+                            'rounded px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
+                            currentUrl.startsWith(href)
+                                ? 'bg-accent text-accent-foreground'
+                                : 'text-muted-foreground',
+                        )}
+                    >
+                        {label}
+                    </Link>
+                ))}
             </nav>
 
             {auth.user && (
