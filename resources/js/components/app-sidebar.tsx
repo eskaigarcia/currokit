@@ -44,7 +44,7 @@ const educacionItems: NavItem[] = [
 const bottomItems: NavItem[] = [
     { title: 'Logros', href: '/logros', icon: Trophy },
     { title: 'Notificaciones', href: '/notificaciones', icon: Bell },
-    { title: 'Configuración', href: '/configuracion', icon: Settings },
+    { title: 'Configuración', href: '/ajustes', icon: Settings },
     { title: 'Ayuda y soporte', href: '/ayuda', icon: HelpCircle },
 ];
 
